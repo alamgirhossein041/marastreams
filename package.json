@@ -20,6 +20,7 @@
     "@thirdweb-dev/sdk": "^3.5.2",
     "@web3auth/web3auth-wagmi-connector": "^1.0.0",
     "ethers": "^5.7.2",
+    "moralis": "^2.7.3",
     "next": "^12.1.6",
     "next-auth": "^4.16.4",
     "next-sanity": "^1.0.6",
