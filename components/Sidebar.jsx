@@ -18,8 +18,8 @@ const menuItems = [
   { id: 2, label: "Swap", icon: MagnifyingGlassIcon, link: "/swap" },
   { id: 3, label: "Lottery", icon: BuildingLibraryIcon, link: "/lottery" },
   { id: 4, label: "Rails", icon: PlusCircleIcon, link: "/rails" },
-  { id: 4, label: "Invest", icon: PlusCircleIcon, link: "/earn" },
-  { id: 4, label: "Borrow", icon: PlusCircleIcon, link: "/borrow" },
+  { id: 5, label: "Invest", icon: PlusCircleIcon, link: "/invest" },
+  { id: 6, label: "Borrow", icon: PlusCircleIcon, link: "/borrow" },
 ];
 
 const Sidebar = () => {
