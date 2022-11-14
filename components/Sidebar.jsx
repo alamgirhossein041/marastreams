@@ -88,14 +88,14 @@ const Sidebar = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-start mt-24">
+            <div className="flex flex-col items-start mt-8">
               {menuItems.map(({ icon: Icon, ...menu }) => {
                 {/** const classes = getNavItemClasses(menu); */}
                 return (
-                  <div className={`text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase`}> {/** <div className={classes}> */}
+                  <div className={`text-emerald-900 dark:text-emerald-100 m-3 mt-4 uppercase`}> {/** <div className={classes}> */}
                     <Link href={menu.link}>
-                      <div className="rounded-xl flex hover:cursor-pointer hover:bg-green-200">
-                        <a className="flex py-4 px-3 items-center w-full h-full">
+                      <div className="rounded-xl flex hover:cursor-pointer hover:bg-emerald-900">
+                        <a className="flex py-2 px-3 items-center w-full h-full">
                           <div style={{ width: "2.5rem" }}>
                             <Icon />
                           </div>
