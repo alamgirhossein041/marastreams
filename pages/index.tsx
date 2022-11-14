@@ -1,18 +1,18 @@
-// import type { NextPage, GetServerSideProps } from 'next'
+import type { NextPage, GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { useEffect } from "react";
 import {Layout, Vault, Login} from '../components'
 import {sanityClient, urlFor} from '../sanity'
-// import { UniversalProfile } from '../typings'
+import { UniversalProfile } from '../typings'
 import { useStateContext } from '../contexts/ContextProvider';
 
 
-// interface Props {
-//   universal_profiles: [UniversalProfile];
-// }
+interface Props {
+  universal_profiles: [UniversalProfile];
+}
 
 
-const Home =  ({universal_profiles}) => {
+const Home =  ({universal_profiles}: Props) => {
   const { setUpList, userAddress } = useStateContext(); 
   
 
@@ -43,7 +43,7 @@ const Home =  ({universal_profiles}) => {
 
 export default Home
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const query = `*[_type == "up_accounts"]{
     list_of_user_wallets,
     up_account,
@@ -58,6 +58,6 @@ export const getServerSideProps = async () => {
   const universal_profiles = await sanityClient.fetch(query);
 
   return {
-    universal_profiles 
+    props: { universal_profiles },
   }
 }
