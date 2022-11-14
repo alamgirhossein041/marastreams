@@ -24,7 +24,7 @@ const Dashboard = () => {
 
   
   const fetchUniversalProfile = async (upList: [Props], userAddress: any) => {   
-    const filterUps = (filters:string | any) => upList.filter(up => up.list_of_user_wallets.some(g => filters.includes(g)))
+    const filterUps = (filters:string | any) => upList.filter(up => up.list_of_user_wallets.some((g: any) => filters.includes(g)))
     let eoa_address = [userAddress]
     if(filterUps(eoa_address)[0] != undefined){
         const up = filterUps(eoa_address)[0].up_account
