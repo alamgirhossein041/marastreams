@@ -115,19 +115,15 @@ const Sidebar = () => {
                 );
               })}
             </div>
-
-            
-
-
           </div>
 
           <div className={`${getNavItemClasses({})} px-3 py-4`}>        
             {!toggleCollapse && (
               <>
                 {mounted? userAddress && (
-                  <div className="text-emerald-400">                
+                  <div className="text-emerald-400 min-w-max">                
                     <button 
-                      className="bg-blue-400 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded"
+                      className="bg-emerald-100 dark:bg-emerald-900 hover:text-emerald-500 text-white font-bold py-1 px-2 rounded"
                       onClick={disconnect}
                     >
                       {userAddress.slice(0,6)+"..."+userAddress.slice(-4)}
