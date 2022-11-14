@@ -108,13 +108,13 @@ const lottery: NextPage = () => {
   if(!address) return (<Login />);
 
   return (
-    <div className="bg-[#091B18] max-h-screen flex flex-col">
+    <div className="bg-[#091B18] h-[100%] flex flex-col object-contain overflow-scroll">
       <Head>
         <title>lottery</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='flex-1'>
+      <div className='flex-1 object-contain'>
         <Header />
 
         <Marquee className='bg-[#091B18] p-5 mb-5' gradient={false} speed={100}>

@@ -21,20 +21,9 @@ const Layout = ({ children }) => {
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
         <div className="flex w-screen relative dark:bg-main-dark-bg">
-            <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
-                <Tooltip title="Settings" placement="top">
-                    <button
-                        type="button"
-                        onClick={() => setThemeSettings(true)}
-                        style={{ background: currentColor, borderRadius: '50%' }}
-                        className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
-                    >
-                        <FiSettings />
-                    </button>
-                </Tooltip>
-            </div>
+            
             {activeMenu ? (
-                <div className="w-72 fixed sidebar dark:bg-[#091B18] bg-emerald-100   ">
+                <div className="w-64 fixed sidebar dark:bg-[#091B18] bg-emerald-100   ">
                     <Sidebar />
                 </div>
                 ) : (
@@ -51,8 +40,8 @@ const Layout = ({ children }) => {
                 <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-[85%] ">
                     <Navbar />
                 </div>
-                <div className="flex flex-col justify-between h-screen object-scale-down p-4">
-                    <div className="flex flex-col items-start overflow-scroll object-contain h-screen w-screen ">
+                <div className="flex flex-col justify-between h-[90%] w-[85%] object-scale-down p-4 overflow-scroll">
+                    <div className="flex flex-col items-start overflow-scroll object-contain ">
                         {themeSettings && (<ThemeSettings />)}
                         {children}                
                     </div>

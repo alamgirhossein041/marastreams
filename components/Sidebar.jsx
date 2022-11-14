@@ -11,15 +11,14 @@ import Tooltip from '@mui/material/Tooltip';
 
 import { useStateContext } from '../contexts/ContextProvider';
 
-import {HomeIcon, MagnifyingGlassIcon, BuildingLibraryIcon, PlusCircleIcon, HeartIcon, HomeModernIcon } from '@heroicons/react/24/outline'
+import {HomeIcon, MagnifyingGlassIcon, BuildingLibraryIcon, PlusCircleIcon, HeartIcon, HomeModernIcon, FingerPrint } from '@heroicons/react/24/outline'
 
 const menuItems = [
   { id: 1, label: "Vault", icon: HomeIcon, link: "/" },
   { id: 2, label: "Swap", icon: MagnifyingGlassIcon, link: "/swap" },
   { id: 3, label: "Lottery", icon: BuildingLibraryIcon, link: "/lottery" },
   { id: 4, label: "Rails", icon: PlusCircleIcon, link: "/rails" },
-  { id: 4, label: "Earn", icon: PlusCircleIcon, link: "/earn" },
-  { id: 4, label: "Lend", icon: PlusCircleIcon, link: "/lend" },
+  { id: 4, label: "Invest", icon: PlusCircleIcon, link: "/earn" },
   { id: 4, label: "Borrow", icon: PlusCircleIcon, link: "/borrow" },
 ];
 
@@ -94,7 +93,7 @@ const Sidebar = () => {
                 return (
                   <div className={`text-emerald-900 dark:text-emerald-100 m-3 mt-4 uppercase`}> {/** <div className={classes}> */}
                     <Link href={menu.link}>
-                      <div className="rounded-xl flex hover:cursor-pointer hover:bg-emerald-900">
+                      <div className="rounded-xl flex hover:cursor-pointer hover:bg-emerald-200 hover:dark:bg-emerald-900">
                         <a className="flex py-2 px-3 items-center w-full h-full">
                           <div style={{ width: "2.5rem" }}>
                             <Icon />
