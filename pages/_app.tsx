@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-// import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app'
 import { Toaster } from 'react-hot-toast';
 import { ContextProvider } from '../contexts/ContextProvider';
 import { ThirdwebProvider } from "@thirdweb-dev/react";
@@ -85,7 +85,7 @@ const client = createClient({
   provider,
 });
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ContextProvider>
       <WagmiConfig client={client}>
