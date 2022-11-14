@@ -7,10 +7,13 @@ import { UniversalProfile } from '../../typings'
 
 interface Props {
   universal_profiles: [UniversalProfile];
+  list_of_user_wallets: list_of_user_wallets
+  up_account: string;
 }
 
 interface list_of_user_wallets {
   list_of_user_wallets: string[];
+  some: any;
 }
 
 const Dashboard = () => {
