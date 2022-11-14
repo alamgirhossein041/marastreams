@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+// import type { AppProps } from 'next/app'
 import { Toaster } from 'react-hot-toast';
 import { ContextProvider } from '../contexts/ContextProvider';
 import { ThirdwebProvider } from "@thirdweb-dev/react";
@@ -12,7 +12,7 @@ import '@rainbow-me/rainbowkit/styles.css';
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 
 
-const binanceChain: Chain = {
+const binanceChain = {
   id: 56,
   name: "Binance Smart Chain Mainnet",
   network: "binance-smart chain mainnet",
@@ -34,7 +34,7 @@ const binanceChain: Chain = {
   testnet: false,
 };
 
-const bscTestnet: Chain = {
+const bscTestnet = {
   id: 97,
   name: "Binance Smart Chain Testnet",
   network: "bsc Testnet",
@@ -85,7 +85,7 @@ const client = createClient({
   provider,
 });
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }) {
   return (
     <ContextProvider>
       <WagmiConfig client={client}>
