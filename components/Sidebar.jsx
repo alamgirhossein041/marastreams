@@ -11,7 +11,7 @@ import Tooltip from '@mui/material/Tooltip';
 
 import { useStateContext } from '../contexts/ContextProvider';
 
-import {HomeIcon, MagnifyingGlassIcon, BuildingLibraryIcon, PlusCircleIcon, HeartIcon, HomeModernIcon, FingerPrint } from '@heroicons/react/24/outline'
+import {HomeIcon, MagnifyingGlassIcon, BuildingLibraryIcon, PlusCircleIcon, HeartIcon } from '@heroicons/react/24/outline'
 
 const menuItems = [
   { id: 1, label: "Vault", icon: HomeIcon, link: "/" },
