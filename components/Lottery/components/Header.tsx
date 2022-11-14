@@ -30,7 +30,7 @@ const Header = () => {
                 {/**Button */}
                 <NavButton title='Buy Tickets' isActive />
                 {/**Button */}
-                <NavButton onclick={disconnect} title='Logout' />
+                <NavButton onclick={disconnect} title='Logout' isActive />
             </div>
         </div>
 
@@ -39,7 +39,7 @@ const Header = () => {
         
 
             <span className='md:hidden'>
-                <NavButton onclick={disconnect} title='Logout' />
+                <NavButton onclick={disconnect} title='Logout' isActive />
             </span>
         </div>
     </header>
