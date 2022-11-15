@@ -33,7 +33,7 @@ const UpDashboard = () => {
             <div className='flex flex-row w-full flex-wrap'>
                 {/** ...Top Row...*/}
                 <div className='flex flex-wrap'>
-                    <div class="flex justify-between grid grid-cols-3 gap-6 m-10 mb-10">
+                    <div class="flex justify-between grid grid-cols-3 gap-6 m-4 mb-1">
                         {/** Card 1 */}
                         <article className="container bg-white dark:text-gray-200 dark:bg-secondary-dark-bg shadow-2xl rounded-2xl p-5 hover:cursor-pointer" onClick={()=>{setActiveTab('totaAssets')}} >
                             <h1 className="font-extrabold text-2xl text-emerald-600 dark:text-emerald-100">Total Assets</h1>
