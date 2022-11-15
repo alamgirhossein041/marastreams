@@ -24,63 +24,41 @@ const UpDashboard = () => {
   // useEffect(() => {console.log('UP: ',universalProfile)},[userAddress] )
 
   return (
-    <div className="mt-2">
+    <div className="">
         {/* <div className="flex flex-wrap lg:flex-nowrap justify-start ">
             <p className={`font-bold uppercase dark: font-white`}>Vault</p>
         </div> */}
 
-        <div className="flex gap-10 flex-wrap justify-center">
-
-            {/** Earnings Cards */}
+        <div className="flex gap-1 flex-wrap justify-center object-scale-down">
             <div className='flex flex-row w-full flex-wrap'>
                 {/** ...Top Row...*/}
                 <div className='flex flex-wrap'>
-                    {/** Card 1 */}
-                    <div className=" rounded-2xl md:w-400 p-4 m-3 items-start hover:cursor-pointer" onClick={()=>{setActiveTab('totaAssets')}}   style={{ backgroundColor: currentColor }} >
-                        <div className="flex justify-between items-center ">
-                            <p className="font-semibold text-white text-2xl">Total Assets</p>
-
-                        <div>
-                            <p className="text-2xl text-white font-semibold mt-8">$63,448.78</p>
-                            <p className="text-gray-200">Monthly revenue</p>
-                        </div>
-                        </div>
-
-                        <div className="mt-4">
-                            {/* <SparkLine currentColor={currentColor} id="column-sparkLine" height="100px" type="Column" data={SparklineAreaData} width="320" color="rgb(242, 252, 253)" /> */}
-                        </div>
+                    <div class="flex justify-between grid grid-cols-3 gap-6 m-10 mb-10">
+                        {/** Card 1 */}
+                        <article className="container bg-white dark:text-gray-200 dark:bg-secondary-dark-bg shadow-2xl rounded-2xl p-5 hover:cursor-pointer" onClick={()=>{setActiveTab('totaAssets')}} >
+                            <h1 className="font-extrabold text-2xl text-emerald-600 dark:text-emerald-100">Total Assets</h1>
+                            <p className="font-light text-gray-500 hover:font-semibold">$63,448.78</p>
+                            <h6 className="text-sm text-gray-400 mb-5">{'Address: '+userAddress.slice(0,6)+'...'+userAddress.slice(-4)}</h6>
+                            <h6 className="text-sm text-gray-400 mb-5">{'Universal Profile: '+universalProfile.slice(0,6)+'...'+universalProfile.slice(-4)}</h6>
+                            <a href="#" className="rounded-lg py-2 px-4 text-center text-white bg-gray-600 hover:bg-gray-700">$63,448.78</a>
+                        </article>
+                        {/** Card 2 */}
+                        <article className="container bg-white dark:text-gray-200 dark:bg-secondary-dark-bg shadow-2xl rounded-2xl p-5 hover:cursor-pointer" onClick={()=>{setActiveTab('tokenAssets')}}>
+                            <h1 className="font-bold text-emerald-600">Digital Assets</h1>
+                            <p className="font-light text-gray-500 hover:font-semibold">$43,246</p>
+                            <h6 className="text-sm text-gray-400 mb-5">{'Address: '+userAddress.slice(0,6)+'...'+userAddress.slice(-4)}</h6>
+                            <h6 className="text-sm text-gray-400 mb-5">{'Universal Profile: '+universalProfile.slice(0,6)+'...'+universalProfile.slice(-4)}</h6>
+                        </article>
+                        {/** Card 3 */}
+                        <article className="container bg-white dark:text-gray-200 dark:bg-secondary-dark-bg shadow-2xl rounded-2xl p-5 hover:cursor-pointer" onClick={()=>{setActiveTab('collectibles')}}>
+                            <h1 className="font-bold text-emerald-600">Collectibles</h1>
+                            <p className="font-light text-gray-500 hover:font-semibold">$43,246</p>
+                            <h6 className="text-sm text-gray-400 mb-5">{'Address: '+userAddress.slice(0,6)+'...'+userAddress.slice(-4)}</h6>
+                            <h6 className="text-sm text-gray-400 mb-5">{'Universal Profile: '+universalProfile.slice(0,6)+'...'+universalProfile.slice(-4)}</h6>                     
+                        </article>
                     </div>
-
-                    {/** Card 2 */}
-                    <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-start gap-10 hover:cursor-pointer" onClick={()=>{setActiveTab('tokenAssets')}} >
-                        <div>
-                            <p className="text-gray-400">Digital Assets</p>
-                            <p className="text-2xl font-semibold ">$43,246</p>
-                            
-                            <p className="text-gray-400">{'Address: '+userAddress.slice(0,6)+'...'+userAddress.slice(-4)}</p>                            
-                            <p className="text-gray-200">{'Universal Profile: '+universalProfile.slice(0,6)+'...'+universalProfile.slice(-4)}</p>
-                        </div>
-
-                        <div className="w-40 h-40">
-                            {/* <Pie id="pie-chart" data={ecomPieChartData} legendVisiblity={false} height="160px" /> */}
-                        </div>
-                    </div>
-
-                    {/** Card 3 */}
-                    <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-start gap-10 hover:cursor-pointer" onClick={()=>{setActiveTab('collectibles')}} >
-                        <div>
-                            <p className="text-gray-400">Collectibles</p>
-                            <p className="text-2xl font-semibold ">$43,246</p>
-                        </div>
-
-                        <div className="w-40">
-                            {/* <Pie id="pie-chart" data={ecomPieChartData} legendVisiblity={false} height="160px" /> */}
-                        </div>
-                    </div>
-
                 </div>
             </div>
-
         </div>
 
         {/** Transactions Tab */}
