@@ -35,7 +35,7 @@ const UpDashboard = () => {
                 <div className='flex flex-wrap'>
                     <div class="flex justify-between grid grid-cols-3 gap-6 m-4 mb-1">
                         {/** Card 1 */}
-                        <article className="container bg-white dark:text-gray-200 dark:bg-secondary-dark-bg shadow-2xl rounded-2xl p-5 hover:cursor-pointer" onClick={()=>{setActiveTab('totaAssets')}} >
+                        <article className="container bg-[#E5EDE9] dark:text-gray-200 dark:bg-secondary-dark-bg shadow-2xl rounded-2xl p-5 hover:cursor-pointer" onClick={()=>{setActiveTab('totaAssets')}} >
                             <h1 className="font-extrabold text-2xl text-emerald-600 dark:text-emerald-100">Total Assets</h1>
                             <p className="font-light text-gray-500 hover:font-semibold">$63,448.78</p>
                             <h6 className="text-sm text-gray-400 mb-5">{'Address: '+userAddress.slice(0,6)+'...'+userAddress.slice(-4)}</h6>
@@ -43,14 +43,14 @@ const UpDashboard = () => {
                             <a href="#" className="rounded-lg py-2 px-4 text-center text-white bg-gray-600 hover:bg-gray-700">$63,448.78</a>
                         </article>
                         {/** Card 2 */}
-                        <article className="container bg-white dark:text-gray-200 dark:bg-secondary-dark-bg shadow-2xl rounded-2xl p-5 hover:cursor-pointer" onClick={()=>{setActiveTab('tokenAssets')}}>
+                        <article className="container bg-[#E5EDE9] dark:text-gray-200 dark:bg-secondary-dark-bg shadow-2xl rounded-2xl p-5 hover:cursor-pointer" onClick={()=>{setActiveTab('tokenAssets')}}>
                             <h1 className="font-bold text-emerald-600">Digital Assets</h1>
                             <p className="font-light text-gray-500 hover:font-semibold">$43,246</p>
                             <h6 className="text-sm text-gray-400 mb-5">{'Address: '+userAddress.slice(0,6)+'...'+userAddress.slice(-4)}</h6>
                             <h6 className="text-sm text-gray-400 mb-5">{'Universal Profile: '+universalProfile.slice(0,6)+'...'+universalProfile.slice(-4)}</h6>
                         </article>
                         {/** Card 3 */}
-                        <article className="container bg-white dark:text-gray-200 dark:bg-secondary-dark-bg shadow-2xl rounded-2xl p-5 hover:cursor-pointer" onClick={()=>{setActiveTab('collectibles')}}>
+                        <article className="container bg-[#E5EDE9] dark:text-gray-200 dark:bg-secondary-dark-bg shadow-2xl rounded-2xl p-5 hover:cursor-pointer" onClick={()=>{setActiveTab('collectibles')}}>
                             <h1 className="font-bold text-emerald-600">Collectibles</h1>
                             <p className="font-light text-gray-500 hover:font-semibold">$43,246</p>
                             <h6 className="text-sm text-gray-400 mb-5">{'Address: '+userAddress.slice(0,6)+'...'+userAddress.slice(-4)}</h6>
@@ -62,8 +62,8 @@ const UpDashboard = () => {
         </div>
 
         {/** Transactions Tab */}
-        {activeTab === 'totaAssets' && (<div className="flex gap-10 m-4 flex-wrap justify-center">
-            <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-full">
+        {activeTab === 'totaAssets' && (<div className="flex gap-10 m-4 flex-wrap justify-center shadow-2xl overflow-clip">
+            <div className="bg-[#E5EDE9] dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-full">
             <div className="flex justify-between items-center gap-2">
                 <p className="text-xl font-semibold">Recent Transactions</p>
                 <DropDown currentMode={currentMode} />
@@ -104,7 +104,7 @@ const UpDashboard = () => {
                 <p className="text-gray-400 text-sm">36 Recent Transactions</p>
             </div>
             </div>
-            {/* <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-96 md:w-760">
+            {/* <div className="bg-[#E5EDE9] dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-96 md:w-760">
                 <div className="flex justify-between items-center gap-2 mb-10">
                     <p className="text-xl font-semibold">Balance History Overview</p>
                     <DropDown currentMode={currentMode} />
@@ -116,8 +116,8 @@ const UpDashboard = () => {
         </div>)}
 
         {/** Tokens Tab */}
-        {activeTab === 'tokenAssets' && (<div className="flex gap-10 m-4 flex-wrap justify-center">
-            <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-full">
+        {activeTab === 'tokenAssets' && (<div className="flex gap-10 m-4 flex-wrap justify-center shadow-2xl">
+            <div className="bg-[#E5EDE9] dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-full">
             <div className="flex justify-between items-center gap-2">
                 <p className="text-xl font-semibold">Token Assets</p>
                 <DropDown currentMode={currentMode} />
@@ -149,7 +149,7 @@ const UpDashboard = () => {
                 <p className="text-gray-400 text-sm">36 Recent Transactions</p>
             </div>
             </div>
-            {/* <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-96 md:w-760">
+            {/* <div className="bg-[#E5EDE9] dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-96 md:w-760">
                 <div className="flex justify-between items-center gap-2 mb-10">
                     <p className="text-xl font-semibold">Balance History Overview</p>
                     <DropDown currentMode={currentMode} />
@@ -161,8 +161,8 @@ const UpDashboard = () => {
         </div>)}
 
         {/** Transactions Tab */}
-        {activeTab === 'collectibles' && (<div className="flex gap-10 m-4 flex-wrap justify-center">
-            <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-full">
+        {activeTab === 'collectibles' && (<div className="flex gap-10 m-4 flex-wrap justify-center shadow-2xl">
+            <div className="bg-[#E5EDE9] dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-full">
             <div className="flex justify-between items-center gap-2">
                 <p className="text-xl font-semibold">Collectibles</p>
                 <DropDown currentMode={currentMode} />
@@ -203,7 +203,7 @@ const UpDashboard = () => {
                 <p className="text-gray-400 text-sm">36 Recent Transactions</p>
             </div>
             </div>
-            {/* <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-96 md:w-760">
+            {/* <div className="bg-[#E5EDE9] dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-96 md:w-760">
                 <div className="flex justify-between items-center gap-2 mb-10">
                     <p className="text-xl font-semibold">Balance History Overview</p>
                     <DropDown currentMode={currentMode} />

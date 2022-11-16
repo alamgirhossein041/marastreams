@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
                 <div className="fixed md:static bg-[#C8E5D2] dark:bg-[#091B18] navbar w-[85%] ">
                     <Navbar />
                 </div>
-                <div className="flex flex-col justify-between h-[90%] w-[85%] object-scale-down p-4 overflow-scroll">
+                <div className="flex flex-col justify-between h-[90%] w-[100%] md:w-[85%] object-scale-down pt-16 pb-1 px-4 overflow-scroll">
                     <div className="flex flex-col items-start overflow-scroll object-contain ">
                         {themeSettings && (<ThemeSettings />)}
                         {children}                
