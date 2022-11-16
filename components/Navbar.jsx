@@ -89,6 +89,12 @@ const Navbar = () => {
           {isClicked.userProfile && (<UserProfile />)}
         </div>
       </div>
+
+      <div className='md:hidden justify-end'>
+        <div className="flex ">
+          <NavButton title="Mode" customFunc={() => setCurrentMode(currentMode === 'Light'?'Dark':'Light')} color={currentColor} icon={currentMode === 'Light'?(<BsMoonStars />):(<BsSun />)} />           
+        </div>
+      </div>
     </div>
   );
 };

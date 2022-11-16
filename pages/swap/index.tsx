@@ -15,7 +15,8 @@ const swap: NextPage = () => {
       </Head>
 
       <Layout>
-        {!userAddress ? (<Login />
+        {!userAddress ? (
+          <Login />
         ):(
           <div className='bg-primary h-screen w-full overflow-hidden'>
             <Swap />
