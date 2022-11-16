@@ -25,7 +25,7 @@
     }
 }
 
-
+/*Swap Component styles**/
 input[type="number"] {
     -moz-appearance: textfield;
   }
@@ -71,3 +71,4 @@ input[type="number"] {
       #1bb2de 99.52%
     );
   }
+/*---End---Swap Component styles**/

@@ -20,10 +20,10 @@ const Layout = ({ children }) => {
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
-        <div className="flex w-screen relative dark:bg-main-dark-bg">
+        <div className="flex w-screen relative bg-gradient-to-r from-[#C8E5D2] to-[#CDEAD8] dark:from-[#091B18] dark:to-[#091B20]">
             
             {activeMenu ? (
-                <div className="w-64 fixed sidebar dark:bg-[#091B18] bg-emerald-100   ">
+                <div className="w-64 fixed sidebar dark:bg-[#061513] bg-[#bfdcc9] ">
                     <Sidebar />
                 </div>
                 ) : (
@@ -33,11 +33,11 @@ const Layout = ({ children }) => {
             )}
             <div className={
                 activeMenu
-                    ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  '
-                    : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
+                    ? 'dark:bg-[#091B18]  bg-[#C8E5D2] min-h-screen md:ml-72 w-full  '
+                    : 'bg-[#C8E5D2] dark:bg-[#091B18]  w-full min-h-screen flex-2 '
                 }
             >
-                <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-[85%] ">
+                <div className="fixed md:static bg-[#C8E5D2] dark:bg-[#091B18] navbar w-[85%] ">
                     <Navbar />
                 </div>
                 <div className="flex flex-col justify-between h-[90%] w-[85%] object-scale-down p-4 overflow-scroll">

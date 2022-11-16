@@ -6,12 +6,22 @@ import Tooltip from '@mui/material/Tooltip';
 import { themeColors } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
+// Marastreams cooler theme
+// Light Mode:
+
+ // Background….
+ // From: #C8E5D2
+ // To: #CDEAD8 
+
+// Sidebar Bar:
+ // #E5EDE9 
+ 
 const ThemeSettings = () => {
   const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useStateContext();
 
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
-      <div className="float-right h-screen dark:text-gray-200  bg-emerald-100 dark:bg-[#091B18] w-[280px]">
+      <div className="float-right h-screen dark:text-gray-200  bg-[#C8E5D2] dark:bg-[#091B18] w-[280px]">
         <div className="flex justify-between items-center p-4 ml-4">
           <p className="font-semibold text-lg">Settings</p>
           <button

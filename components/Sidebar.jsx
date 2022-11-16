@@ -87,32 +87,34 @@ const Sidebar = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-start mt-8">
-              {menuItems.map(({ icon: Icon, ...menu }) => {
-                {/** const classes = getNavItemClasses(menu); */}
-                return (
-                  <div className={`text-emerald-900 dark:text-emerald-100 m-3 mt-4 uppercase`}> {/** <div className={classes}> */}
-                    <Link href={menu.link}>
-                      <div className="rounded-xl flex hover:cursor-pointer hover:bg-emerald-200 hover:dark:bg-emerald-900">
-                        <a className="flex py-2 px-3 items-center w-full h-full">
-                          <div style={{ width: "2.5rem" }}>
-                            <Icon />
-                          </div>
-                          {(
-                            <span
-                              className={({ isActive }) => ({
-                                backgroundColor: isActive ? currentColor : '',
-                              })}
-                            >
-                              {menu.label}
-                            </span>
-                          )}
-                        </a>
-                      </div>
-                    </Link>
-                  </div>
-                );
-              })}
+            <div className="ml-2 mr-4 mb-8 mt-8 bg-[#CDEAD8] dark:bg-[#091B18] rounded-2xl bg-opacity-60">
+              <div className="flex flex-col items-start mt-2">
+                {menuItems.map(({ icon: Icon, ...menu }) => {
+                  {/** const classes = getNavItemClasses(menu); */}
+                  return (
+                    <div className={`text-emerald-900 dark:text-emerald-100 m-3 mt-4 uppercase`}> {/** <div className={classes}> */}
+                      <Link href={menu.link}>
+                        <div className="rounded-xl flex hover:cursor-pointer hover:bg-[#b2d2be] hover:dark:bg-[#0c2923]">
+                          <a className="flex py-2 px-3 items-center w-full h-full">
+                            <div style={{ width: "2.5rem" }}>
+                              <Icon />
+                            </div>
+                            {(
+                              <span
+                                className={({ isActive }) => ({
+                                  backgroundColor: isActive ? currentColor : '',
+                                })}
+                              >
+                                {menu.label}
+                              </span>
+                            )}
+                          </a>
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
@@ -120,9 +122,9 @@ const Sidebar = () => {
             {!toggleCollapse && (
               <>
                 {mounted? userAddress && (
-                  <div className="text-emerald-400 min-w-max">                
+                  <div className="text-emerald-400 justify-center">                
                     <button 
-                      className="bg-emerald-100 dark:bg-emerald-900 hover:text-emerald-500 text-white font-bold py-1 px-2 rounded"
+                      className="bg-[#CDEAD8] dark:bg-[#091B18] dark:hover:text-[#b7eccb] hover:text-[#0c2923] text-gray-500 dark:text-white font-bold py-1 px-4 rounded"
                       onClick={disconnect}
                     >
                       {userAddress.slice(0,6)+"..."+userAddress.slice(-4)}
