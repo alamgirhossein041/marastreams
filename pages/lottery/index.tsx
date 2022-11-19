@@ -1,12 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useState } from "react";
-import {Layout, Login, Lottery} from '../../components'
-import { useStateContext } from '../../contexts/ContextProvider';
+import {Layout, Login, Lottery} from '../../components';
+import {useDisconnect, useAccount} from 'wagmi';
 
 
 const lottery: NextPage = () => {
-  const userAddress = useStateContext();
+  const {address} = useAccount();
   return (
     <div className="bg-primary h-screen w-full overflow-hidden">
       <Head>
@@ -15,7 +14,8 @@ const lottery: NextPage = () => {
       </Head>
 
       <Layout>
-        {!userAddress ? (<Login />
+        {!address ? (
+          <Login />
         ):(
           <div className='bg-primary h-screen w-full overflow-hidden'>
             <Lottery />

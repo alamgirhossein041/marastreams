@@ -6,7 +6,7 @@ import { useStateContext } from '../../contexts/ContextProvider';
 const Swap = () => {
   const { currentColor, currentMode, userAddress } = useStateContext();  
   const account = userAddress;
-  const poolsLoading = true;
+  const poolsLoading = false;
   return (
     <div className='flex justify-center min-h-screen sm:px-16 px-6 bg-inherit object-fill'>  {/** container */}
       <div className='flex justify-between items-center flex-col max-w-[1280px] w-full'>     {/** innerContainer */}   
@@ -19,14 +19,14 @@ const Swap = () => {
             <div className='relative md:max-w-[700px] md:min-w-[500px] min-w-full max-w-full gradient-border p-[2px] rounded-3xl'> {/** exchangeBox */}
               <div className="pink_gradient" /> {/** pink_gradient */}
                 <div className='w-full min-h-[400px] bg-black backdrop-blur-[4px] rounded-3xl shadow-xl flex p-10 text-gray-500'> {/** exchange */}
-                    {account ? (
-                    poolsLoading ? (
-                        <Loader title="Loading pools, please wait!" />
+                    {!userAddress ? (
+                      poolsLoading ? (
+                          <Loader title="Loading pools, please wait!" />
+                      ) : (
+                          <Exchange />
+                      )
                     ) : (
-                        <Exchange />
-                    )
-                    ) : (
-                    <Loader title="Please connect your wallet" />
+                      <Loader title="Please connect your wallet" />
                     )}
                 </div>
               <div className="blue_gradient" /> {/** blue_gradient */}

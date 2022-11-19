@@ -1,12 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useState } from "react";
 import {Layout, Login, Swap} from '../../components'
-import { useStateContext } from '../../contexts/ContextProvider';
+import {useDisconnect, useAccount} from 'wagmi';
 
 
 const swap: NextPage = () => {
-  const userAddress = useStateContext();
+  const {address} = useAccount();
   return (
     <div className="bg-primary h-screen w-full overflow-hidden">
       <Head>
@@ -15,7 +14,7 @@ const swap: NextPage = () => {
       </Head>
 
       <Layout>
-        {!userAddress ? (
+        {!address ? (
           <Login />
         ):(
           <div className='bg-primary h-screen w-full overflow-hidden'>

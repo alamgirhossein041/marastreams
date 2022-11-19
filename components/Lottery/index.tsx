@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useStateContext } from '../../contexts/ContextProvider';
+// import { useStateContext } from '../../contexts/ContextProvider';
+import {useDisconnect, useAccount} from 'wagmi';
 
 
-import { useAddress, useContract, useContractRead, useContractWrite } from '@thirdweb-dev/react'
+import { useContract, useContractRead, useContractWrite } from '@thirdweb-dev/react'
 import {Header, Login, Loading, CountDownTimer, AdminControls} from './components'
 import {currency} from './constants'
 import PropagateLoader from 'react-spinners/PropagateLoader'
@@ -14,10 +15,10 @@ import Marquee from "react-fast-marquee";
 // import { useContract, useContractRead, useProvider } from 'wagmi';
 
 const lottery: NextPage = () => {
-  const { userAddress } = useStateContext();
+  const { address } = useAccount();
   // const provider = useProvider()
   
-  const address = userAddress;
+  
   const [userTickets, setUserTickets] = useState<number>(0);
   const [quantity, setQuantity] = useState <number>(1)
   const {contract, isLoading} = useContract(process.env.NEXT_PUBLIC_LOTTERY_CONTRACT_ADDRESS);

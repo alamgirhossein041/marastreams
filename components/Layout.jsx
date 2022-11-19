@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Navbar, Footer, Sidebar, ThemeSettings } from '../components';
+import {useDisconnect, useAccount} from 'wagmi';
 
 import { FiSettings } from 'react-icons/fi';
 import Tooltip from '@mui/material/Tooltip'; 

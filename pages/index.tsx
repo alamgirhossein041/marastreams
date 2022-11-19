@@ -30,11 +30,13 @@ const Home =  ({universal_profiles}: Props) => {
 
       <Layout>
         {!userAddress ? (
-          <Login />
+          <div className='bg-primary h-screen justify-center w-full overflow-hidden'>
+            <Login />
+          </div>
         ):(
-          <>
+          <div className=''>
             <Vault />
-          </>
+          </div>
         )}
       </Layout>;
     </div>

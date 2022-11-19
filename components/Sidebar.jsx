@@ -2,7 +2,7 @@ import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState, useMemo } from "react";
-import {useDisconnect} from 'wagmi';
+import {useDisconnect, useAccount} from 'wagmi';
 import {useIsMounted} from '../hooks/useIsMounted'
 
 import { SiShopware } from 'react-icons/si';
@@ -10,6 +10,7 @@ import { MdOutlineCancel } from 'react-icons/md';
 import Tooltip from '@mui/material/Tooltip';
 
 import { useStateContext } from '../contexts/ContextProvider';
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 import {HomeIcon, MagnifyingGlassIcon, BuildingLibraryIcon, PlusCircleIcon, HeartIcon } from '@heroicons/react/24/outline'
 
@@ -23,7 +24,8 @@ const menuItems = [
 ];
 
 const Sidebar = () => {
-  const { currentColor, activeMenu, setActiveMenu, screenSize, userAddress } = useStateContext();
+  const { currentColor, activeMenu, setActiveMenu, screenSize } = useStateContext();
+  const { address: userAddress, status } = useAccount();
   const { disconnect } = useDisconnect()
   const mounted = useIsMounted();  
   const [toggleCollapse, setToggleCollapse] = useState(false);
@@ -129,8 +131,16 @@ const Sidebar = () => {
                     >
                       {userAddress.slice(0,6)+"..."+userAddress.slice(-4)}
                     </button>
+
+                    <div className=" w-40 text-emerald-200 object-contain">
+                      <ConnectButton />
+                    </div>
                   </div>
-                ): null}
+                ): (
+                  <div className=" w-40 text-emerald-200 object-contain">
+                      <ConnectButton />
+                    </div>
+                )}
               </>
             )}
           </div>

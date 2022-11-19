@@ -1,12 +1,16 @@
 import React from 'react'
 import NavButton from './NavButton'
 import {Bars3BottomRightIcon} from '@heroicons/react/24/solid'
-import { useAddress, useDisconnect } from '@thirdweb-dev/react';
+// import { useAddress } from '@thirdweb-dev/react';
+import {useDisconnect, useAccount} from 'wagmi';
+import { useStateContext } from '../../../contexts/ContextProvider';
 
 
 const Header = () => {
-  const address = useAddress();
-  const disconnect = useDisconnect();
+  const {disconnect} = useDisconnect();
+  const { currentColor, activeMenu, setActiveMenu, screenSize, userAddress } = useStateContext();
+  const { address, status } = useAccount();
+  // const address = userAddress;
 
   return (
     <header className='grid grid-cols-2 md:grid-cols-5 justify-between items-center p-5'>
@@ -25,8 +29,10 @@ const Header = () => {
             </div>
         </div>
 
+        
+
         <div className='hidden md:flex md:col-span-3 items-center justify-center rounded-md'>
-            <div className='bg-[#0A1F1C]'>
+            <div className='bg-[#0A1F1C]  space-x-1'>
                 {/**Button */}
                 <NavButton title='Buy Tickets' isActive />
                 {/**Button */}
@@ -34,10 +40,10 @@ const Header = () => {
             </div>
         </div>
 
-        <div className='flex flex-col ml-auto text-right'>
-            <Bars3BottomRightIcon className='h-8 w-8 mx-auto text-white cursor-pointer' />
         
 
+        <div className='flex flex-col ml-auto text-right'>
+            <Bars3BottomRightIcon className='h-8 w-8 mx-auto text-white cursor-pointer' />
             <span className='md:hidden'>
                 <NavButton onclick={disconnect} title='Logout' isActive />
             </span>
