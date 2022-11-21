@@ -55,40 +55,40 @@ const bscTestnet = {
   testnet: true,
 };
 
-const polygonMainnet = {
-  id: 97,
-  name: "Binance Smart Chain Testnet",
-  network: "bsc Testnet",
+const nearMainnet = {
+  id: 1313161554,
+  name: "Near Aurora Mainnet",
+  network: "Near Aurora Mainnet",
   nativeCurrency: {
-    name: "Binance Chain Native Token",
-    symbol: "BNB",
+    name: "Ethereum Token",
+    symbol: "ETH",
     decimals: 18,
   },
   rpcUrls: {
-    binance: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-    default: "https://data-seed-prebsc-2-s1.binance.org:8545/",
+    binance: "https://mainnet.aurora.dev/",
+    default: "https://mainnet.aurora.dev/",
   },
   blockExplorers: {
-    default: { name: "Bscscan", url: "https://testnet.bscscan.com" },
+    default: { name: "nearAuroraMainnet", url: "https://aurorascan.dev/" },
   },
   testnet: true,
 };
 
-const polygonMumbai = {
-  id: 97,
-  name: "Binance Smart Chain Testnet",
-  network: "bsc Testnet",
+const nearTestnet = {
+  id: 1313161555,
+  name: "Near Aurora Testnet",
+  network: "Near Aurora Testnet",
   nativeCurrency: {
-    name: "Binance Chain Native Token",
-    symbol: "BNB",
+    name: "Ethereum Token",
+    symbol: "ETH",
     decimals: 18,
   },
   rpcUrls: {
-    binance: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-    default: "https://data-seed-prebsc-2-s1.binance.org:8545/",
+    binance: "https://testnet.aurora.dev/",
+    default: "https://testnet.aurora.dev/",
   },
   blockExplorers: {
-    default: { name: "Bscscan", url: "https://testnet.bscscan.com" },
+    default: { name: "nearAuroraTestnet", url: "https://testnet.aurorascan.dev/" },
   },
   testnet: true,
 };
@@ -96,7 +96,7 @@ const polygonMumbai = {
 
 
 const { chains, provider } = configureChains(
-  [binanceChain, bscTestnet, chain.polygon, chain.polygonMumbai],
+  [binanceChain, bscTestnet, chain.polygon, chain.polygonMumbai, nearMainnet, nearTestnet],
   [
     jsonRpcProvider({
       rpc: (chain) => {
@@ -112,6 +112,18 @@ const { chains, provider } = configureChains(
     }),
     alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_POLYGON_API }),
     alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_MUMBAI_API }),
+    jsonRpcProvider({
+      rpc: (chain) => {
+        if (chain.id !== nearMainnet.id) return null;
+        return { http: chain.rpcUrls.default };
+      },
+    }),
+    jsonRpcProvider({
+      rpc: (chain) => {
+        if (chain.id !== nearTestnet.id) return null;
+        return { http: chain.rpcUrls.default };
+      },
+    }),
   ]
 );
 

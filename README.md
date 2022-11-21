@@ -46,12 +46,12 @@ Celo
 
 # Near Aurora Testnet:
 
-"UniversalProfileInit" deployed at 
-"LSP6KeyManagerInit" deployed at 
-"LSP7MintableInit" deployed at 
-"LSP8MintableInit"  deployed at 
-"LSP9VaultInit"  deployed at
-"LSP1UniversalReceiverDelegateUP"  deployed at 
-"Lottery" deployed at 
+"UniversalProfileInit" (tx: 0xae23970880ba08db81dbd77222065e2573da4f7d6ab1365015abef2c3b64cafa)...: deployed at 0xcda8BEA3Cc64fdaa6a8B69eD930C07A5db5DBDA6
+"LSP6KeyManagerInit" (tx: 0x0814feb59868bc40a0f1941372a8adf1260ef1d8798acfbf515e65028152b377)...: deployed at 0x51E074dA63f6b28524f78F95903728dC4F21bfc7 
+"LSP7MintableInit" (tx: 0x4e971adcbea52296c84bf695a2eedb817981e66b35a5a182ceda4ffadbf14c0f)...: deployed at 0xd99adaBD6DfF220971dac0AE342093ea8711873B
+"LSP8MintableInit" (tx: 0x231131dc9478974c5e753e87208002c51b9edbff6a3aaeb0fe2df1db41ac088c)...: deployed at 0x608A766a66F567575fD57B7c6E023Ba9321Fd7ED 
+"LSP9VaultInit" (tx: 0xa5c22915766a5fd2ebfa2403ea9318c8d2eab62c131a8fa37560350cfdf9283f)...: deployed at 0x2da6bf2E65dB08C19C8B46b873C128C287d9081e
+"LSP1UniversalReceiverDelegateUP" (tx: 0x8b91b88021d19de1f15b9c3de6d984225fe8b14c8a384b8bc1b6b16d81d33f1b)...: deployed at 0xC22fcA8E73b35aE8d4DD940792d71199e32C9817
+"Lottery" (tx: 0x303a740106948b5afec655e71c67712ea5ee17e191795b85291be7d328d821c0)...: deployed at 0x88f75Ccef169Dc553651bBb062330f285BC9fC1f
 "Swap ROUTER"  deployed at 
 
