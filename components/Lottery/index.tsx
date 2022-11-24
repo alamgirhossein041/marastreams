@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 // import { useStateContext } from '../../contexts/ContextProvider';
-import {useDisconnect, useAccount} from 'wagmi';
+import {useDisconnect, useAccount, useNetwork} from 'wagmi';
 
 
 import { useContract, useContractRead, useContractWrite } from '@thirdweb-dev/react'
@@ -16,12 +16,19 @@ import Marquee from "react-fast-marquee";
 
 const lottery: NextPage = () => {
   const { address } = useAccount();
+  const { chain, chains } = useNetwork()
   // const provider = useProvider()
+  const lottery_contract_address: string | any = () => {
+    if(chain?.id === undefined) {return process.env.NEXT_PUBLIC_LOTTERY_CONTRACT_ADDRESS;} 
+    else if(chain?.id === 97){ return process.env.NEXT_PUBLIC_LOTTERY_CONTRACT_ADDRESS;}
+    else if(chain?.id === 80001){ return "";}
+    else if(chain?.id === 1313161555){ return "0x88f75Ccef169Dc553651bBb062330f285BC9fC1f";}
+  }
   
   
   const [userTickets, setUserTickets] = useState<number>(0);
   const [quantity, setQuantity] = useState <number>(1)
-  const {contract, isLoading} = useContract(process.env.NEXT_PUBLIC_LOTTERY_CONTRACT_ADDRESS);
+  const {contract, isLoading} = useContract(lottery_contract_address);
   // const contract = useContract({
   //   address: process.env.NEXT_PUBLIC_LOTTERY_CONTRACT_ADDRESS,
   //   abi: ensRegistryABI,
